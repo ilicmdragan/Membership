@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <title>Bootstrap Form</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Prva kolona -->
+        <div class="col-md-4">
+          <div class="row mb-4">
+            <label ></label><b>Adresa</b></label>
+            <div>
+                <input type="text" class="form-control" name="Adresa" value="<?php echo $Adresa; ?>">
+            </div>
+        </div>
+
+        <div class="row mb-1">
+            <label class="col-sm-3 col-form-label"><b>Poštanski broj i mesto</b></label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="MestoIPostanskiBroj" value="<?php echo $MestoIPostanskiBroj; ?>">
+            </div>
+        </div>
+
+        <!-- Druga kolona -->
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="field6">Polje 6</label>
+            <input type="text" class="form-control" id="field6" />
+          </div>
+          <div class="form-group">
+            <label for="field7">Polje 7</label>
+            <input type="text" class="form-control" id="field7" />
+          </div>
+          <div class="form-group">
+            <label for="field8">Polje 8</label>
+            <input type="text" class="form-control" id="field8" />
+          </div>
+          <div class="form-group">
+            <label for="field9">Polje 9</label>
+            <input type="text" class="form-control" id="field9" />
+          </div>
+          <div class="form-group">
+            <label for="field10">Polje 10</label>
+            <input type="text" class="form-control" id="field10" />
+          </div>
+        </div>
+
+        <!-- Treća kolona -->
+        <div class="col-md-4">
+          
+          <div class="form-group">
+            <label for="field11">Polje 11 (Više od hiljadu karaktera)</label>
+            <textarea class="form-control" id="field11" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="field12">Polje 12</label>
+            <input type="text" class="form-control" id="field12" />
+          </div>
+          <div class="form-group">
+            <label for="field13">Polje 13</label>
+            <input type="text" class="form-control" id="field13" />
+          </div>
+          <div class="form-group">
+            <label for="field14">Polje 14</label>
+            <input type="text" class="form-control" id="field14" />
+          </div>
+          <div class="form-group">
+            <label for="field15">Polje 15</label>
+            <input type="text" class="form-control" id="field15" />
+          </div>
+
+          <!-- Dugmadi za ažuriranje i zatvaranje -->
+          <div class="form-group">
+            <button type="button" class="btn btn-primary">Ažuriraj</button>
+            <button type="button" class="btn btn-secondary">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

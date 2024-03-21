@@ -1,0 +1,56 @@
+                        <div class="row mb-1">
+                            <label class="col-sm-3 col-form-label" for="Opstina"><b>Opština</b></label>
+                            <div class="col-sm-3">
+                                <select id="Opstina" class="form-control" name="Opstina">
+
+                                    <?php
+                                    // Connect to the database
+                                    $conn = mysqli_connect('localhost', 'dba', "G#Zi2ts6rAjzk_9p", 'webdb');
+
+                                    //--Query the tbl_Opstina table-->
+                                    $result = mysqli_query($conn, "SELECT id, naziv_opstine FROM tbl_Opstina");
+
+                                    //--Iterate through the result and create an option element for each row-->
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo '<option value="' . $row['naziv_opstine'] . '">' . $row['naziv_opstine'] . '</option>';
+                                    }
+
+                                    // Check if the form has been submitted
+                                    if (isset($_POST['submit'])) {
+
+                                        // Get the selected option from the dropdown
+                                        $selected_option = mysqli_real_escape_string($conn, $_POST['Opstina']);
+
+                                        // Update the field in the tbl_clanstvo table
+                                        mysqli_query($conn, "UPDATE tbl_clanstvo SET Opstina='$selected_option' WHERE id=$ID");
+                                    }
+
+                                    // Query the database to get the current value of the Opstina field
+                                    $result = mysqli_query($conn, "SELECT Opstina FROM tbl_clanstvo WHERE id=$ID");
+                                    $row = mysqli_fetch_assoc($result);
+                                    $current_value = $row['Opstina'];
+
+
+
+
+                                    // Check if the form has been submitted
+                                    if (isset($_POST['submit'])) {
+                                        // Get the selected option from the dropdown
+                                        $selected_option = mysqli_real_escape_string($conn, $_POST['PodrskaZaOsnivanjeStranke']);
+
+
+                                        // Update the field in the tbl_clanstvo table
+                                        mysqli_query($conn, "UPDATE tbl_clanstvo SET PodrskaZaOsnivanjeStranke='$selected_option' WHERE id=$ID");
+                                    }
+
+                                    // Query the database to get the current value of the PodrskaZaStranku field
+                                    $result = mysqli_query($conn, "SELECT PodrskaZaOsnivanjeStranke FROM tbl_clanstvo where id=$ID");
+                                    $row = mysqli_fetch_assoc($result);
+                                    $current_value = $row['PodrskaZaOsnivanjeStranke'];
+
+                                    // Close the database connection
+                                    mysqli_close($conn);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
